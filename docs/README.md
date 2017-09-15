@@ -1,5 +1,5 @@
 
-![Alt text](/home/ocs3/Pictures/intro1.jpg)
+![Alt text](https://github.com/evanzhang0924/hku-atlas/raw/master/docs/intro1.jpg)
 # Introduction
 >The Atlas is a bipedal humanoid robot primarily developed by the American robotics company Boston Dynamics, with funding and oversight from the United States Defense Advanced Research Project Agency(DARPA).
 
