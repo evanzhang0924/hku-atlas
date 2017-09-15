@@ -1,0 +1,8 @@
+prefix=/home/ocs3/hku-atlas/install
+
+Name: beginner_tutorials
+Description: Description of beginner_tutorials
+Version: 0.0.1
+Cflags: -I/home/ocs3/hku-atlas/install/include
+Libs: -L/home/ocs3/hku-atlas/install/lib 
+Requires: message_runtime roscpp rospy std_msgs
