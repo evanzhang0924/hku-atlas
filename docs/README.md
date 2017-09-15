@@ -15,3 +15,7 @@
 
 # Curent Progress
 >Working on the ROS and DRCSIM tutorials...
+
+# Reference
+[1] J. Kober, M. Glisson, and M. Mistry. Playing catch and juggling with a humanoid robot. In Proc. Int. Conf. on Humanoid Robots, 2012  
+[2] E. J. Carter, M. N. Mistr, and G. Peter K. Carr. Playing Catch with Robots: Incorporating Social Gestures into Physical Interactions.
