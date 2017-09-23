@@ -12,6 +12,7 @@
 /home/ocs3/hku-atlas/build/CMakeFiles/doxygen.dir
 /home/ocs3/hku-atlas/build/gtest/CMakeFiles/gtest.dir
 /home/ocs3/hku-atlas/build/gtest/CMakeFiles/gtest_main.dir
+/home/ocs3/hku-atlas/build/beginner_tutorials/CMakeFiles/listener.dir
 /home/ocs3/hku-atlas/build/beginner_tutorials/CMakeFiles/roscpp_generate_messages_cpp.dir
 /home/ocs3/hku-atlas/build/beginner_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir
 /home/ocs3/hku-atlas/build/beginner_tutorials/CMakeFiles/roscpp_generate_messages_py.dir
@@ -22,4 +23,5 @@
 /home/ocs3/hku-atlas/build/beginner_tutorials/CMakeFiles/std_msgs_generate_messages_cpp.dir
 /home/ocs3/hku-atlas/build/beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir
 /home/ocs3/hku-atlas/build/beginner_tutorials/CMakeFiles/std_msgs_generate_messages_py.dir
+/home/ocs3/hku-atlas/build/beginner_tutorials/CMakeFiles/talker.dir
 /home/ocs3/hku-atlas/build/CMakeFiles/tests.dir

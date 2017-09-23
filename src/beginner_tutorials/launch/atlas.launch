@@ -35,4 +35,5 @@
   <include file="$(find drcsim_gazebo)/launch/atlas$(arg hand_suffix)_bringup.launch">
     <arg name="model_args" value="$(arg model_args)"/>
   </include>
+  
 </launch>

@@ -276,6 +276,20 @@ beginner_tutorials_genpy/fast:
 .PHONY : beginner_tutorials_genpy/fast
 
 # Convenience name for target.
+beginner_tutorials/CMakeFiles/listener.dir/rule:
+	cd /home/ocs3/hku-atlas/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/listener.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/listener.dir/rule
+
+# Convenience name for target.
+listener: beginner_tutorials/CMakeFiles/listener.dir/rule
+.PHONY : listener
+
+# fast build rule for target.
+listener/fast:
+	cd /home/ocs3/hku-atlas/build && $(MAKE) -f beginner_tutorials/CMakeFiles/listener.dir/build.make beginner_tutorials/CMakeFiles/listener.dir/build
+.PHONY : listener/fast
+
+# Convenience name for target.
 beginner_tutorials/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
 	cd /home/ocs3/hku-atlas/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 .PHONY : beginner_tutorials/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
@@ -401,6 +415,68 @@ std_msgs_generate_messages_py/fast:
 	cd /home/ocs3/hku-atlas/build && $(MAKE) -f beginner_tutorials/CMakeFiles/std_msgs_generate_messages_py.dir/build.make beginner_tutorials/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
+# Convenience name for target.
+beginner_tutorials/CMakeFiles/talker.dir/rule:
+	cd /home/ocs3/hku-atlas/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/talker.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/talker.dir/rule
+
+# Convenience name for target.
+talker: beginner_tutorials/CMakeFiles/talker.dir/rule
+.PHONY : talker
+
+# fast build rule for target.
+talker/fast:
+	cd /home/ocs3/hku-atlas/build && $(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/build
+.PHONY : talker/fast
+
+src/listener.o: src/listener.cpp.o
+.PHONY : src/listener.o
+
+# target to build an object file
+src/listener.cpp.o:
+	cd /home/ocs3/hku-atlas/build && $(MAKE) -f beginner_tutorials/CMakeFiles/listener.dir/build.make beginner_tutorials/CMakeFiles/listener.dir/src/listener.cpp.o
+.PHONY : src/listener.cpp.o
+
+src/listener.i: src/listener.cpp.i
+.PHONY : src/listener.i
+
+# target to preprocess a source file
+src/listener.cpp.i:
+	cd /home/ocs3/hku-atlas/build && $(MAKE) -f beginner_tutorials/CMakeFiles/listener.dir/build.make beginner_tutorials/CMakeFiles/listener.dir/src/listener.cpp.i
+.PHONY : src/listener.cpp.i
+
+src/listener.s: src/listener.cpp.s
+.PHONY : src/listener.s
+
+# target to generate assembly for a file
+src/listener.cpp.s:
+	cd /home/ocs3/hku-atlas/build && $(MAKE) -f beginner_tutorials/CMakeFiles/listener.dir/build.make beginner_tutorials/CMakeFiles/listener.dir/src/listener.cpp.s
+.PHONY : src/listener.cpp.s
+
+src/talker.o: src/talker.cpp.o
+.PHONY : src/talker.o
+
+# target to build an object file
+src/talker.cpp.o:
+	cd /home/ocs3/hku-atlas/build && $(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/src/talker.cpp.o
+.PHONY : src/talker.cpp.o
+
+src/talker.i: src/talker.cpp.i
+.PHONY : src/talker.i
+
+# target to preprocess a source file
+src/talker.cpp.i:
+	cd /home/ocs3/hku-atlas/build && $(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/src/talker.cpp.i
+.PHONY : src/talker.cpp.i
+
+src/talker.s: src/talker.cpp.s
+.PHONY : src/talker.s
+
+# target to generate assembly for a file
+src/talker.cpp.s:
+	cd /home/ocs3/hku-atlas/build && $(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/src/talker.cpp.s
+.PHONY : src/talker.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -421,6 +497,7 @@ help:
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
+	@echo "... listener"
 	@echo "... rebuild_cache"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
@@ -431,7 +508,14 @@ help:
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... talker"
 	@echo "... test"
+	@echo "... src/listener.o"
+	@echo "... src/listener.i"
+	@echo "... src/listener.s"
+	@echo "... src/talker.o"
+	@echo "... src/talker.i"
+	@echo "... src/talker.s"
 .PHONY : help
 
 
