@@ -1,0 +1,16 @@
+<package>
+  <description brief="atlas_sim_interface_tutorial">
+
+     atlas_sim_interface_tutorial
+
+  </description>
+  <author>ocs3</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/atlas_sim_interface_tutorial</url>
+  <depend package="rospy"/>
+  <depend package="atlas_msgs"/>
+
+</package>
+
+
