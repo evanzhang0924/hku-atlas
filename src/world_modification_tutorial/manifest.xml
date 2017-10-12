@@ -1,0 +1,15 @@
+<package>
+  <description brief="world_modification_tutorial">
+
+     world_modification_tutorial
+
+  </description>
+  <author>ocs3</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/world_modification_tutorial</url>
+  <depend package="drcsim_gazebo"/>
+
+</package>
+
+
