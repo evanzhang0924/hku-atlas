@@ -1,2 +1,2 @@
-beginner_tutorials
+beginner_tutorials:learning_tf
 -DCATKIN_DEVEL_PREFIX=/home/ocs3/hku-atlas/devel -DCMAKE_INSTALL_PREFIX=/home/ocs3/hku-atlas/install -G Unix Makefiles

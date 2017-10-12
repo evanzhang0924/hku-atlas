@@ -1,0 +1,8 @@
+prefix=/home/ocs3/hku-atlas/devel
+
+Name: learning_tf
+Description: Description of learning_tf
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/ocs3/hku-atlas/devel/lib 
+Requires: 
