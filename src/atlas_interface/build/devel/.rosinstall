@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/ocs3/hku-atlas/src/atlas_interface/build/devel/setup.sh
