@@ -23,8 +23,10 @@ int main(int argc, char** argv){
   while (node.ok()){
     tf::StampedTransform transform;
     try{
-      listener.lookupTransform("/turtle2", "/turtle1",
-                               ros::Time(0), transform);
+      ros::Time now = ros::Time::now();
+      ros::Time past = now - ros::Duration(5.0);
+      listener.waitForTransform("/turtle2", now, "/turtle1", past, "/world", ros::Duration(1.0));
+      listener.lookupTransform("/turtle2", now, "/turtle1", past, "/world", transform);
     }
     catch (tf::TransformException &ex) {
       ROS_ERROR("%s",ex.what());
