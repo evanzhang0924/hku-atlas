@@ -1,0 +1,8 @@
+prefix=/home/ocs3/hku-atlas/devel
+
+Name: ball_throwing_tutorial
+Description: Description of ball_throwing_tutorial
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/ocs3/hku-atlas/devel/lib 
+Requires: 

@@ -99,41 +99,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named hello_world
+# Target rules for targets named ball_throwing
 
 # Build rule for target.
-hello_world: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hello_world
-.PHONY : hello_world
+ball_throwing: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ball_throwing
+.PHONY : ball_throwing
 
 # fast build rule for target.
-hello_world/fast:
-	$(MAKE) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/build
-.PHONY : hello_world/fast
+ball_throwing/fast:
+	$(MAKE) -f CMakeFiles/ball_throwing.dir/build.make CMakeFiles/ball_throwing.dir/build
+.PHONY : ball_throwing/fast
 
-hello_world.o: hello_world.cc.o
-.PHONY : hello_world.o
+ball_throwing.o: ball_throwing.cc.o
+.PHONY : ball_throwing.o
 
 # target to build an object file
-hello_world.cc.o:
-	$(MAKE) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/hello_world.cc.o
-.PHONY : hello_world.cc.o
+ball_throwing.cc.o:
+	$(MAKE) -f CMakeFiles/ball_throwing.dir/build.make CMakeFiles/ball_throwing.dir/ball_throwing.cc.o
+.PHONY : ball_throwing.cc.o
 
-hello_world.i: hello_world.cc.i
-.PHONY : hello_world.i
+ball_throwing.i: ball_throwing.cc.i
+.PHONY : ball_throwing.i
 
 # target to preprocess a source file
-hello_world.cc.i:
-	$(MAKE) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/hello_world.cc.i
-.PHONY : hello_world.cc.i
+ball_throwing.cc.i:
+	$(MAKE) -f CMakeFiles/ball_throwing.dir/build.make CMakeFiles/ball_throwing.dir/ball_throwing.cc.i
+.PHONY : ball_throwing.cc.i
 
-hello_world.s: hello_world.cc.s
-.PHONY : hello_world.s
+ball_throwing.s: ball_throwing.cc.s
+.PHONY : ball_throwing.s
 
 # target to generate assembly for a file
-hello_world.cc.s:
-	$(MAKE) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/hello_world.cc.s
-.PHONY : hello_world.cc.s
+ball_throwing.cc.s:
+	$(MAKE) -f CMakeFiles/ball_throwing.dir/build.make CMakeFiles/ball_throwing.dir/ball_throwing.cc.s
+.PHONY : ball_throwing.cc.s
 
 # Help Target
 help:
@@ -141,12 +141,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... ball_throwing"
 	@echo "... edit_cache"
-	@echo "... hello_world"
 	@echo "... rebuild_cache"
-	@echo "... hello_world.o"
-	@echo "... hello_world.i"
-	@echo "... hello_world.s"
+	@echo "... ball_throwing.o"
+	@echo "... ball_throwing.i"
+	@echo "... ball_throwing.s"
 .PHONY : help
 
 

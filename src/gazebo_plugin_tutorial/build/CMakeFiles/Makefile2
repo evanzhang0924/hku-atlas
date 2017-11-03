@@ -53,38 +53,38 @@ CMAKE_SOURCE_DIR = /home/ocs3/hku-atlas/src/gazebo_plugin_tutorial
 CMAKE_BINARY_DIR = /home/ocs3/hku-atlas/src/gazebo_plugin_tutorial/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/hello_world.dir
+# Target rules for target CMakeFiles/ball_throwing.dir
 
 # All Build rule for target.
-CMakeFiles/hello_world.dir/all:
-	$(MAKE) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/depend
-	$(MAKE) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/build
+CMakeFiles/ball_throwing.dir/all:
+	$(MAKE) -f CMakeFiles/ball_throwing.dir/build.make CMakeFiles/ball_throwing.dir/depend
+	$(MAKE) -f CMakeFiles/ball_throwing.dir/build.make CMakeFiles/ball_throwing.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/ocs3/hku-atlas/src/gazebo_plugin_tutorial/build/CMakeFiles  1
-	@echo "Built target hello_world"
-.PHONY : CMakeFiles/hello_world.dir/all
+	@echo "Built target ball_throwing"
+.PHONY : CMakeFiles/ball_throwing.dir/all
 
 # Include target in all.
-all: CMakeFiles/hello_world.dir/all
+all: CMakeFiles/ball_throwing.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/hello_world.dir/rule: cmake_check_build_system
+CMakeFiles/ball_throwing.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ocs3/hku-atlas/src/gazebo_plugin_tutorial/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/hello_world.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ball_throwing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ocs3/hku-atlas/src/gazebo_plugin_tutorial/build/CMakeFiles 0
-.PHONY : CMakeFiles/hello_world.dir/rule
+.PHONY : CMakeFiles/ball_throwing.dir/rule
 
 # Convenience name for target.
-hello_world: CMakeFiles/hello_world.dir/rule
-.PHONY : hello_world
+ball_throwing: CMakeFiles/ball_throwing.dir/rule
+.PHONY : ball_throwing
 
 # clean rule for target.
-CMakeFiles/hello_world.dir/clean:
-	$(MAKE) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/clean
-.PHONY : CMakeFiles/hello_world.dir/clean
+CMakeFiles/ball_throwing.dir/clean:
+	$(MAKE) -f CMakeFiles/ball_throwing.dir/build.make CMakeFiles/ball_throwing.dir/clean
+.PHONY : CMakeFiles/ball_throwing.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/hello_world.dir/clean
+clean: CMakeFiles/ball_throwing.dir/clean
 .PHONY : clean
 
 #=============================================================================

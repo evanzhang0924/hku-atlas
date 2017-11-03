@@ -118,7 +118,6 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/ocs3/hku-atlas/build/gtest/cmake_install.cmake")
   INCLUDE("/home/ocs3/hku-atlas/build/beginner_tutorials/cmake_install.cmake")
-  INCLUDE("/home/ocs3/hku-atlas/build/learning_tf/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
