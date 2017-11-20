@@ -27,10 +27,11 @@ namespace gazebo
 
             this->model->SetGravityMode(true);
             this->isThrown = true;
-            this->model->SetLinearVel(math::Vector3(-7, -0.3, 5));
+            //printf("I am in this step !\n");
+            this->model->SetLinearVel(math::Vector3(7, -0.3, 5));
         }
 
-        if((simTimeInt+3)%6==0) {
+        if((simTimeInt + 3) % 6 == 0) {
             this->model->SetGravityMode(false);
             this->isThrown = false;
             this->model->SetLinkWorldPose(this->pose, this->lp);
@@ -42,7 +43,7 @@ namespace gazebo
     }
 
 
-
+    // the only mandatory function is this one Load which receives an SDF element.
     public: void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
     {
         this->model = _model;
