@@ -24,11 +24,11 @@
 
 
 # 3. Curent Progress
->Have done about the ROS and DRCSIM tutorials
+###### (1). Have done about the ROS and DRCSIM tutorials
 
 ![Alt text](https://github.com/evanzhang0924/hku-atlas/raw/master/docs/ball throwing pic in gazebo.png)
 
->Have done the ball throwing in a fixed information such as velocity, time, angle, and so on towards the Atlas.
+###### (2). Have done the ball throwing in a fixed information such as velocity, time, angle, and so on towards the Atlas.
 
 >Maybe it would be better if we know the detailed intersection coordination of the ball and the plane. In the Gazebo simulation, we could calculate to the data, but in the real world testing, we need a shooting machine of the tennis ball to set the initial velocity, acceleration and other data so that we know the landing position accurately.
 
