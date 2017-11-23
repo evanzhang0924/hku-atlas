@@ -26,7 +26,7 @@
 # 3. Curent Progress
 ###### (1). Have done about the ROS and DRCSIM tutorials
 
-![Alt text](https://github.com/evanzhang0924/hku-atlas/raw/master/docs/ball throwing pic in gazebo.png)
+![Alt text](https://github.com/evanzhang0924/hku-atlas/raw/master/docs/ballthrowing.png)
 
 ###### (2). Have done the ball throwing in a fixed information such as velocity, time, angle, and so on towards the Atlas.
 
