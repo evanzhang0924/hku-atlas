@@ -1,23 +1,23 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/ocs3/hku-atlas/src/drcsim_joint_commands_tutorial/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec496509334/fast"
+Run Build Command:/usr/bin/make "cmTryCompileExec1753516752/fast"
 make[1]: Entering directory `/home/ocs3/hku-atlas/src/drcsim_joint_commands_tutorial/build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTryCompileExec496509334.dir/build.make CMakeFiles/cmTryCompileExec496509334.dir/build
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1753516752.dir/build.make CMakeFiles/cmTryCompileExec1753516752.dir/build
 make[2]: Entering directory `/home/ocs3/hku-atlas/src/drcsim_joint_commands_tutorial/build/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /home/ocs3/hku-atlas/src/drcsim_joint_commands_tutorial/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec496509334.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec496509334.dir/CheckSymbolExists.c.o   -c /home/ocs3/hku-atlas/src/drcsim_joint_commands_tutorial/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec496509334
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec496509334.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec496509334.dir/CheckSymbolExists.c.o  -o cmTryCompileExec496509334 -rdynamic 
-CMakeFiles/cmTryCompileExec496509334.dir/CheckSymbolExists.c.o: In function `main':
+Building C object CMakeFiles/cmTryCompileExec1753516752.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1753516752.dir/CheckSymbolExists.c.o   -c /home/ocs3/hku-atlas/src/drcsim_joint_commands_tutorial/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec1753516752
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1753516752.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec1753516752.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1753516752 -rdynamic 
+CMakeFiles/cmTryCompileExec1753516752.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
 make[2]: Leaving directory `/home/ocs3/hku-atlas/src/drcsim_joint_commands_tutorial/build/CMakeFiles/CMakeTmp'
-make[2]: *** [cmTryCompileExec496509334] Error 1
+make[2]: *** [cmTryCompileExec1753516752] Error 1
 make[1]: Leaving directory `/home/ocs3/hku-atlas/src/drcsim_joint_commands_tutorial/build/CMakeFiles/CMakeTmp'
-make[1]: *** [cmTryCompileExec496509334/fast] Error 2
+make[1]: *** [cmTryCompileExec1753516752/fast] Error 2
 
 File /home/ocs3/hku-atlas/src/drcsim_joint_commands_tutorial/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -37,21 +37,21 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/ocs3/hku-atlas/src/drcsim_joint_commands_tutorial/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3115829110/fast"
+Run Build Command:/usr/bin/make "cmTryCompileExec852482608/fast"
 make[1]: Entering directory `/home/ocs3/hku-atlas/src/drcsim_joint_commands_tutorial/build/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3115829110.dir/build.make CMakeFiles/cmTryCompileExec3115829110.dir/build
+/usr/bin/make -f CMakeFiles/cmTryCompileExec852482608.dir/build.make CMakeFiles/cmTryCompileExec852482608.dir/build
 make[2]: Entering directory `/home/ocs3/hku-atlas/src/drcsim_joint_commands_tutorial/build/CMakeFiles/CMakeTmp'
 /usr/bin/cmake -E cmake_progress_report /home/ocs3/hku-atlas/src/drcsim_joint_commands_tutorial/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3115829110.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3115829110.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec3115829110
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3115829110.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec3115829110.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3115829110 -rdynamic -lpthreads 
+Building C object CMakeFiles/cmTryCompileExec852482608.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec852482608.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec852482608
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec852482608.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec852482608.dir/CheckFunctionExists.c.o  -o cmTryCompileExec852482608 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
 make[2]: Leaving directory `/home/ocs3/hku-atlas/src/drcsim_joint_commands_tutorial/build/CMakeFiles/CMakeTmp'
-make[2]: *** [cmTryCompileExec3115829110] Error 1
+make[2]: *** [cmTryCompileExec852482608] Error 1
 make[1]: Leaving directory `/home/ocs3/hku-atlas/src/drcsim_joint_commands_tutorial/build/CMakeFiles/CMakeTmp'
-make[1]: *** [cmTryCompileExec3115829110/fast] Error 2
+make[1]: *** [cmTryCompileExec852482608/fast] Error 2
 
 
