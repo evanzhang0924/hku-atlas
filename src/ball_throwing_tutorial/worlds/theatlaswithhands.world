@@ -10911,7 +10911,7 @@
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
+              <name>Gazebo/Yellow</name>
             </script>
           </material>
         </visual>
