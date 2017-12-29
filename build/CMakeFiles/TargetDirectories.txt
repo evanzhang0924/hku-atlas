@@ -1,5 +1,7 @@
 /home/ocs3/hku-atlas/build/beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_AddTwoInts.dir
 /home/ocs3/hku-atlas/build/beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_Num.dir
+/home/ocs3/hku-atlas/build/atlas_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir
+/home/ocs3/hku-atlas/build/ball_throwing_plugin/CMakeFiles/ball_throwing.dir
 /home/ocs3/hku-atlas/build/beginner_tutorials/CMakeFiles/beginner_tutorials_gencpp.dir
 /home/ocs3/hku-atlas/build/beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir
 /home/ocs3/hku-atlas/build/beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir

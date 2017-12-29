@@ -1,2 +1,2 @@
-ball_throwing_tutorial:beginner_tutorials
+atlas_moveit_config:ball_throwing_plugin:ball_throwing_tutorial:beginner_tutorials:pr2_moveit_config:pr2_moveit_config_now
 -DCATKIN_DEVEL_PREFIX=/home/ocs3/hku-atlas/devel -DCMAKE_INSTALL_PREFIX=/home/ocs3/hku-atlas/install -G Unix Makefiles

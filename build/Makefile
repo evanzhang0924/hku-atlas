@@ -241,6 +241,19 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named ball_throwing
+
+# Build rule for target.
+ball_throwing: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ball_throwing
+.PHONY : ball_throwing
+
+# fast build rule for target.
+ball_throwing/fast:
+	$(MAKE) -f ball_throwing_plugin/CMakeFiles/ball_throwing.dir/build.make ball_throwing_plugin/CMakeFiles/ball_throwing.dir/build
+.PHONY : ball_throwing/fast
+
+#=============================================================================
 # Target rules for targets named roscpp_generate_messages_cpp
 
 # Build rule for target.
@@ -500,6 +513,19 @@ talker/fast:
 	$(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/build
 .PHONY : talker/fast
 
+#=============================================================================
+# Target rules for targets named _catkin_empty_exported_target
+
+# Build rule for target.
+_catkin_empty_exported_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _catkin_empty_exported_target
+.PHONY : _catkin_empty_exported_target
+
+# fast build rule for target.
+_catkin_empty_exported_target/fast:
+	$(MAKE) -f atlas_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/build.make atlas_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/build
+.PHONY : _catkin_empty_exported_target/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -520,6 +546,7 @@ help:
 	@echo "... tests"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... ball_throwing"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_py"
@@ -540,6 +567,7 @@ help:
 	@echo "... beginner_tutorials_genpy"
 	@echo "... listener"
 	@echo "... talker"
+	@echo "... _catkin_empty_exported_target"
 .PHONY : help
 
 

@@ -1,0 +1,8 @@
+prefix=/home/ocs3/hku-atlas/install
+
+Name: pr2_moveit_config_now
+Description: Description of pr2_moveit_config_now
+Version: 0.3.0
+Cflags: 
+Libs: -L/home/ocs3/hku-atlas/install/lib 
+Requires: 

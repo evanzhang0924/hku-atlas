@@ -117,8 +117,12 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/ocs3/hku-atlas/build/gtest/cmake_install.cmake")
+  INCLUDE("/home/ocs3/hku-atlas/build/ball_throwing_plugin/cmake_install.cmake")
   INCLUDE("/home/ocs3/hku-atlas/build/ball_throwing_tutorial/cmake_install.cmake")
   INCLUDE("/home/ocs3/hku-atlas/build/beginner_tutorials/cmake_install.cmake")
+  INCLUDE("/home/ocs3/hku-atlas/build/atlas_moveit_config/cmake_install.cmake")
+  INCLUDE("/home/ocs3/hku-atlas/build/pr2_moveit_config/cmake_install.cmake")
+  INCLUDE("/home/ocs3/hku-atlas/build/pr2_moveit_config_now/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
