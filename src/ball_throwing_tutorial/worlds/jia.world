@@ -92,15 +92,6 @@
         <gravity>1</gravity>
       </link>
     </model>
-    <model name='camera_1'>
-       <pose frame=''>1.99991 1.97424 0.958029 0 0 -1.59954</pose>
-       <link name='camera_1::link'>
-         <pose frame=''>1.99991 1.97424 0.958029 0 0 -1.59954</pose>
-         <velocity>-0 -0 0 0 -0 0</velocity>
-         <acceleration>0 2.9985 0 0 -0 0</acceleration>
-         <wrench>0 0.29985 0 0 -0 0</wrench>
-       </link>
-     </model>
     <model name='unit_sphere_1'>
     <plugin filename="libball_throwing.so" name="ball_throwing">
     </plugin>

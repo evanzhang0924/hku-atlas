@@ -27,10 +27,10 @@ namespace gazebo
 
             this->model->SetGravityMode(true);
             this->isThrown = true;
-            this->model->SetLinearVel(math::Vector3(-18, -3, 5));
+            this->model->SetLinearVel(math::Vector3(-7, 0, 3.8));
         }
 
-        if((simTimeInt+3)%6==0) {
+        if((simTimeInt + 3) % 6 == 0) {
             this->model->SetGravityMode(false);
             this->isThrown = false;
             this->model->SetLinkWorldPose(this->pose, this->lp);
