@@ -68,7 +68,7 @@ def atlas_move_python():
     # For debugging reasons, it is useful to print the entire state of the robot.
     print "============= Printing robot state"
     print robot.get_current_state()
-    print "============="
+    print "============= Robot state printing finished."
 
 
     # Planning to a pose goal
@@ -79,12 +79,13 @@ def atlas_move_python():
     pose_target.position.y = -0.05
     pose_target.position.z = 1.1
     group.set_pose_target(pose_target)
+    print "============= Plan 1 has been generated!"
 
     # Until now, I have set the target pose, it is time to call the planner
     # to compute the plan and visualize it if successful.
     # It is important to note that I just start planning, not asking the Atlas
     # to actually move its joint.
-    plan1 = group.plan()
+    # plan1 = group.plan()
 
 
     print "============= Waiting while RVIZ displays plan1..."
@@ -94,15 +95,15 @@ def atlas_move_python():
     # Asking RVIZ to visualize the trajectory for me, although the group.plan()
     # method does this work automatically so this is not that meaningful and it
     # just displays the same trajectory again.
-    print "============= Visualize plan1"
-    display_trajectory_again = moveit_msgs.msg.DisplayTrajectory()
-
-    display_trajectory_again.trajectory_start = robot.get_current_state()
-    display_trajectory_again.append(plan1)
-    display_trajectory_publisher.publish(display_trajectory_again)
-
-    print "============= Waiting wile plan1 is visualized again."
-    rospy.sleep(5)
+    # print "============= Visualize plan1"
+    # display_trajectory_again = moveit_msgs.msg.DisplayTrajectory()
+    #
+    # display_trajectory_again.trajectory_start = robot.get_current_state()
+    # display_trajectory_again.append(plan1)
+    # display_trajectory_publisher.publish(display_trajectory_again)
+    #
+    # print "============= Waiting wile plan1 is visualized again."
+    # rospy.sleep(5)
 
 
     # Moving to a pose goal
