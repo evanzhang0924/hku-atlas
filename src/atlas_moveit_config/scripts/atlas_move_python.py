@@ -111,86 +111,86 @@ def atlas_move_python():
     # group.execute(plan1)
 
     ## Planning to a joint-space goal
-  ## ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  ##
-  ## Let's set a joint space goal and move towards it.
-  ## First, we will clear the pose target we had just set.
+    ## ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ##
+    ## Let's set a joint space goal and move towards it.
+    ## First, we will clear the pose target we had just set.
 
-  group.clear_pose_targets()
+    # group.clear_pose_targets()
+    #
+    # ## Then, we will get the current set of joint values for the group
+    # group_variable_values = group.get_current_joint_values()
+    # print "============ Joint values: ", group_variable_values
+    #
+    # ## Now, let's modify one of the joints, plan to the new joint
+    # ## space goal and visualize the plan
+    # group_variable_values[0] = 1.0
+    # group.set_joint_value_target(group_variable_values)
+    #
+    # plan2 = group.plan()
+    #
+    # print "============ Waiting while RVIZ displays plan2..."
+    # rospy.sleep(5)
+    #
+    #
+    # ## Cartesian Paths
+    # ## ^^^^^^^^^^^^^^^
+    # ## You can plan a cartesian path directly by specifying a list of waypoints
+    # ## for the end-effector to go through.
+    # waypoints = []
+    #
+    # # start with the current pose
+    # waypoints.append(group.get_current_pose().pose)
+    #
+    # # first orient gripper and move forward (+x)
+    # wpose = geometry_msgs.msg.Pose()
+    # wpose.orientation.w = 1.0
+    # wpose.position.x = waypoints[0].position.x + 0.1
+    # wpose.position.y = waypoints[0].position.y
+    # wpose.position.z = waypoints[0].position.z
+    # waypoints.append(copy.deepcopy(wpose))
+    #
+    # # second move down
+    # wpose.position.z -= 0.10
+    # waypoints.append(copy.deepcopy(wpose))
+    #
+    # # third move to the side
+    # wpose.position.y += 0.05
+    # waypoints.append(copy.deepcopy(wpose))
+    #
+    # ## We want the cartesian path to be interpolated at a resolution of 1 cm
+    # ## which is why we will specify 0.01 as the eef_step in cartesian
+    # ## translation.  We will specify the jump threshold as 0.0, effectively
+    # ## disabling it.
+    # (plan3, fraction) = group.compute_cartesian_path(
+    #                              waypoints,   # waypoints to follow
+    #                              0.01,        # eef_step
+    #                              0.0)         # jump_threshold
+    #
+    # print "============ Waiting while RVIZ displays plan3..."
+    # rospy.sleep(5)
+    #
+    # # Uncomment the line below to execute this plan on a real robot.
+    # # group.execute(plan3)
+    #
+    #
+    # ## Adding/Removing Objects and Attaching/Detaching Objects
+    # ## ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    # ## First, we will define the collision object message
+    # collision_object = moveit_msgs.msg.CollisionObject()
+    #
+    #
+    #
+    # ## When finished shut down moveit_commander.
+    # moveit_commander.roscpp_shutdown()
 
-  ## Then, we will get the current set of joint values for the group
-  group_variable_values = group.get_current_joint_values()
-  print "============ Joint values: ", group_variable_values
+    ## END_TUTORIAL
 
-  ## Now, let's modify one of the joints, plan to the new joint
-  ## space goal and visualize the plan
-  group_variable_values[0] = 1.0
-  group.set_joint_value_target(group_variable_values)
-
-  plan2 = group.plan()
-
-  print "============ Waiting while RVIZ displays plan2..."
-  rospy.sleep(5)
+    print "============ STOPPING"
 
 
-  ## Cartesian Paths
-  ## ^^^^^^^^^^^^^^^
-  ## You can plan a cartesian path directly by specifying a list of waypoints
-  ## for the end-effector to go through.
-  waypoints = []
-
-  # start with the current pose
-  waypoints.append(group.get_current_pose().pose)
-
-  # first orient gripper and move forward (+x)
-  wpose = geometry_msgs.msg.Pose()
-  wpose.orientation.w = 1.0
-  wpose.position.x = waypoints[0].position.x + 0.1
-  wpose.position.y = waypoints[0].position.y
-  wpose.position.z = waypoints[0].position.z
-  waypoints.append(copy.deepcopy(wpose))
-
-  # second move down
-  wpose.position.z -= 0.10
-  waypoints.append(copy.deepcopy(wpose))
-
-  # third move to the side
-  wpose.position.y += 0.05
-  waypoints.append(copy.deepcopy(wpose))
-
-  ## We want the cartesian path to be interpolated at a resolution of 1 cm
-  ## which is why we will specify 0.01 as the eef_step in cartesian
-  ## translation.  We will specify the jump threshold as 0.0, effectively
-  ## disabling it.
-  (plan3, fraction) = group.compute_cartesian_path(
-                               waypoints,   # waypoints to follow
-                               0.01,        # eef_step
-                               0.0)         # jump_threshold
-
-  print "============ Waiting while RVIZ displays plan3..."
-  rospy.sleep(5)
-
-  # Uncomment the line below to execute this plan on a real robot.
-  # group.execute(plan3)
-
-
-  ## Adding/Removing Objects and Attaching/Detaching Objects
-  ## ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  ## First, we will define the collision object message
-  collision_object = moveit_msgs.msg.CollisionObject()
-
-
-
-  ## When finished shut down moveit_commander.
-  moveit_commander.roscpp_shutdown()
-
-  ## END_TUTORIAL
-
-  print "============ STOPPING"
-
-
-  if __name__ == "__main__":
-      try:
-          atlas_move_python()
-      except rospy.ROSInterruptException:
-          pass 
+if __name__ == "__main__":
+    try:
+        atlas_move_python()
+    except rospy.ROSInterruptException:
+        pass
