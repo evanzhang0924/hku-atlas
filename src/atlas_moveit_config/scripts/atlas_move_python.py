@@ -86,6 +86,7 @@ def atlas_move_python():
     # It is important to note that I just start planning, not asking the Atlas
     # to actually move its joint.
     plan1 = group.plan()
+    print plan1
 
 
     print "============= Waiting while RVIZ displays plan1..."

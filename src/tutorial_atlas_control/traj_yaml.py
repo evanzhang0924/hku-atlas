@@ -7,11 +7,15 @@ from numpy import zeros, array, linspace
 from math import ceil
 
 atlasJointNames = [
-  'atlas::back_lbz', 'atlas::back_mby', 'atlas::back_ubx', 'atlas::neck_ay',
-  'atlas::l_leg_uhz', 'atlas::l_leg_mhx', 'atlas::l_leg_lhy', 'atlas::l_leg_kny', 'atlas::l_leg_uay', 'atlas::l_leg_lax',
-  'atlas::r_leg_uhz', 'atlas::r_leg_mhx', 'atlas::r_leg_lhy', 'atlas::r_leg_kny', 'atlas::r_leg_uay', 'atlas::r_leg_lax',
-  'atlas::l_arm_usy', 'atlas::l_arm_shx', 'atlas::l_arm_ely', 'atlas::l_arm_elx', 'atlas::l_arm_uwy', 'atlas::l_arm_mwx',
-  'atlas::r_arm_usy', 'atlas::r_arm_shx', 'atlas::r_arm_ely', 'atlas::r_arm_elx', 'atlas::r_arm_uwy', 'atlas::r_arm_mwx']
+  'atlas::back_bkz', 'atlas::back_bky', 'atlas::back_bkx', 'atlas::neck_ry',
+  'atlas::l_leg_hpz', 'atlas::l_leg_hpx', 'atlas::l_leg_hpy', 'atlas::l_leg_kny', 'atlas::l_leg_aky', 'atlas::l_leg_akx',
+  'atlas::r_leg_hpz', 'atlas::r_leg_hpx', 'atlas::r_leg_hpy', 'atlas::r_leg_kny', 'atlas::r_leg_aky', 'atlas::r_leg_akx',
+  'atlas::l_arm_shz', 'atlas::l_arm_shx', 'atlas::l_arm_ely', 'atlas::l_arm_elx', 'atlas::l_arm_wry', 'atlas::l_arm_wrx', 'atlas::l_arm_wry2',
+  'atlas::r_arm_shz', 'atlas::r_arm_shx', 'atlas::r_arm_ely', 'atlas::r_arm_elx', 'atlas::r_arm_wry', 'atlas::r_arm_wrx', 'atlas::r_arm_wry2']
+
+# atlasJointNames = [
+#   'atlas::l_arm_shz', 'atlas::l_arm_shx', 'atlas::l_arm_ely', 'atlas::l_arm_elx', 'atlas::l_arm_wry', 'atlas::l_arm_wrx', 'atlas::l_arm_wry2']
+
 
 currentJointState = JointState()
 def jointStatesCallback(msg):
@@ -52,10 +56,10 @@ if __name__ == '__main__':
   rospy.init_node('tutorial_atlas_control')
   for i in xrange(len(command.name)):
     name = command.name[i]
-    command.kp_position[i]  = rospy.get_param('atlas_controller/gains/' + name[7::] + '/p')
-    command.ki_position[i]  = rospy.get_param('atlas_controller/gains/' + name[7::] + '/i')
-    command.kd_position[i]  = rospy.get_param('atlas_controller/gains/' + name[7::] + '/d')
-    command.i_effort_max[i] = rospy.get_param('atlas_controller/gains/' + name[7::] + '/i_clamp')
+    command.kp_position[i]  = rospy.get_param('/atlas_controller/gains/' + name[7::] + '/p')
+    command.ki_position[i]  = rospy.get_param('/atlas_controller/gains/' + name[7::] + '/i')
+    command.kd_position[i]  = rospy.get_param('/atlas_controller/gains/' + name[7::] + '/d')
+    command.i_effort_max[i] = rospy.get_param('/atlas_controller/gains/' + name[7::] + '/i_clamp')
     command.i_effort_min[i] = -command.i_effort_max[i]
 
   # set up the publisher
