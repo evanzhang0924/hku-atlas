@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import roslib; roslib.load_manifest('tutorial_atlas_control')
 import rospy, yaml, sys
-from osrf_msgs.msg import JointCommands
+from atlas_msgs.msg import AtlasCommand
 from sensor_msgs.msg import JointState
 from numpy import zeros, array, linspace
 from math import ceil
@@ -39,36 +39,45 @@ if __name__ == '__main__':
   rospy.Subscriber("/atlas/joint_states", JointState, jointStatesCallback)
 
   # initialize JointCommands message
-  command = JointCommands()
-  command.name = list(atlasJointNames)
-  n = len(command.name)
-  command.position     = zeros(n)
-  command.velocity     = zeros(n)
-  command.effort       = zeros(n)
-  command.kp_position  = zeros(n)
-  command.ki_position  = zeros(n)
-  command.kd_position  = zeros(n)
-  command.kp_velocity  = zeros(n)
-  command.i_effort_min = zeros(n)
-  command.i_effort_max = zeros(n)
+  command = AtlasCommand()
+  # command.name = list(atlasJointNames)
+  n = 30
+  command.position     = list(zeros(n))
+  command.velocity     = list(zeros(n))
+  command.effort       = list(zeros(n))
+  command.k_effort     = list(zeros(n))
+  # command.kp_position  = list(zeros(n))
+  # command.ki_position  = zeros(n)
+  # command.kd_position  = zeros(n)
+  # command.kp_velocity  = zeros(n)
+  # command.i_effort_min = zeros(n)
+  # command.i_effort_max = zeros(n)
 
   # now get gains from parameter server
   rospy.init_node('tutorial_atlas_control')
-  for i in xrange(len(command.name)):
-    name = command.name[i]
-    command.kp_position[i]  = rospy.get_param('/atlas_controller/gains/' + name[7::] + '/p')
-    command.ki_position[i]  = rospy.get_param('/atlas_controller/gains/' + name[7::] + '/i')
-    command.kd_position[i]  = rospy.get_param('/atlas_controller/gains/' + name[7::] + '/d')
-    command.i_effort_max[i] = rospy.get_param('/atlas_controller/gains/' + name[7::] + '/i_clamp')
-    command.i_effort_min[i] = -command.i_effort_max[i]
+  # ros.get_param('/atlas_controller/gains/l_arm_shz/p')
+  # ros.get_param('/atlas_controller/gains/l_arm_shz/p')
+  # ros.get_param('/atlas_controller/gains/l_arm_shz/p')
+  # ros.get_param('/atlas_controller/gains/l_arm_shz/p')
+
+  # for i in xrange(0, 30):
+  #   name = command.name[i]
+  #   command.kp_position[i]  = rospy.get_param('/atlas_controller/gains/' + name[7::] + '/p')
+  #   command.ki_position[i]  = rospy.get_param('/atlas_controller/gains/' + name[7::] + '/i')
+  #   command.kd_position[i]  = rospy.get_param('/atlas_controller/gains/' + name[7::] + '/d')
+  #   command.i_effort_max[i] = rospy.get_param('/atlas_controller/gains/' + name[7::] + '/i_clamp')
+  #   command.i_effort_min[i] = -command.i_effort_max[i]
+
+
 
   # set up the publisher
-  pub = rospy.Publisher('/atlas/joint_commands', JointCommands, queue_size=1)
+  pub = rospy.Publisher('/atlas/atlas_command', AtlasCommand, queue_size=1)
 
   # for each trajectory
   for i in xrange(0, traj_len):
     # get initial joint positions
     initialPosition = array(currentJointState.position)
+    # initialPosition = initialPosition[16:23]
     # get joint commands from yaml
     y = traj_yaml[traj_name][i]
     # first value is time duration
@@ -79,7 +88,9 @@ if __name__ == '__main__':
     dtPublish = 0.02
     n = ceil(dt / dtPublish)
     for ratio in linspace(0, 1, n):
+      command.k_effort[16:23] = [255] * 7
       interpCommand = (1-ratio)*initialPosition + ratio * commandPosition
       command.position = [ float(x) for x in interpCommand ]
+      print command
       pub.publish(command)
       rospy.sleep(dt / float(n))

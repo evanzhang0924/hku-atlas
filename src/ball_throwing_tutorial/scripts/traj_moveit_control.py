@@ -32,16 +32,19 @@ def jointStatesCallback(msg):
 if __name__ == '__main__':
 
     # First of all, it is important to check that the input arguments are correct
-    if len(sys.argv) != 3:
-        print "usage: traj_moveit_control.py YAML_FILE TRAJECTORY_NAME"
-        print "     where TRAJECTORY is a dictionary defined in YAML_FILE"
-        sys.exit(1)
-    traj_yaml = yaml.load(file(sys.argv[1], 'r'))
-    traj_name = sys.argv[2]
-    if not traj_name in traj_yaml:
-        print "unable to find trajectory %s in %s" % (traj_name, sys.argv[1])
-        sys.exit(1)
-    traj_len = len(traj_yaml[traj_name])
+    # if len(sys.argv) != 3:
+    #     print "usage: traj_moveit_control.py YAML_FILE TRAJECTORY_NAME"
+    #     print "     where TRAJECTORY is a dictionary defined in YAML_FILE"
+    #     sys.exit(1)
+    # traj_yaml = yaml.load(file(sys.argv[1], 'r'))
+    traj_yaml = Traj_date2.yaml
+    # traj_name = sys.argv[2]
+    traj_name = step_and_fall or touchdown or touchdown_exhausted
+    # if not traj_name in traj_yaml:
+    #     print "unable to find trajectory %s in %s" % (traj_name, sys.argv[1])
+    #     sys.exit(1)
+    # traj_len = len(traj_yaml[traj_name])
+    traj_len = how many trajectories you have, basically 4 3 4
 
     # Setup subscriber to atlas states
     rospy.Subscriber("/atlas/joint_states", JointState, jointStatesCallback)
@@ -49,7 +52,8 @@ if __name__ == '__main__':
     # Initialize JointCommands messages
     command = JointCommands()
     command.name = list(atlasJointNames)
-    n = len(command.name)
+    # n = len(command.name)
+    n = 4+6+6+6+6 = 28
     command.position     = zeros(n)
     command.velocity     = zeros(n)
     command.effort       = zeros(n)
@@ -62,7 +66,7 @@ if __name__ == '__main__':
 
     # Now, get gains from parameter server
     rospy.init_node('ball_throwing_tutorial')
-    for i in xrange(len(command.name)):
+    for i in xrange(n):
         name = command.name[i]
         command.kp_position[i]  = rospy.get_param('atlas_controller/gains/' + name[7::] + '/p')
         command.ki_position[i]  = rospy.get_param('atlas_controller/gains/' + name[7::] + '/i')
@@ -80,13 +84,13 @@ if __name__ == '__main__':
         initialPosition = array(currentJointState.position)
 
         # Get joint commands from yaml
-        y = traj_yaml[traj_name][i]
+        y = traj_yaml[traj_name][i] # x道轨迹中的第i条
 
         # First value is time duration
-        dt = float(y[0])
+        dt = float(y[0]) # 这道轨迹用多少时间完成
 
         # Subsequent values are desired joint positions
-        commandPosition = array([ float(x) for x in y[1].split() ])
+        commandPosition = array([ float(x) for x in y[1].split() ]) #关键点 每个joint的数据按顺序扔这里
 
         # Desired publish interval
         dtPublish = 0.02
