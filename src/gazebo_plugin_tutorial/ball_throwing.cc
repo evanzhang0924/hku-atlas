@@ -27,7 +27,7 @@ namespace gazebo
 
             this->model->SetGravityMode(true);
             this->isThrown = true;
-            this->model->SetLinearVel(math::Vector3(-7, 0, 3.8));
+            this->model->SetLinearVel(math::Vector3(-3, 0.19, 6.6));
         }
 
         if((simTimeInt + 3) % 6 == 0) {

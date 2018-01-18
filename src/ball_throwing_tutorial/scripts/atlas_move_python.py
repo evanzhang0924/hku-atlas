@@ -57,27 +57,27 @@ def atlas_move_python():
 
     # Getting basic Information.
 
-    print "============= Reference frame: %s" % group.get_planning_frame()
+    # print "============= Reference frame: %s" % group.get_planning_frame()
 
-    print "============= End effector: %s" % group.get_end_effector_link()
+    # print "============= End effector: %s" % group.get_end_effector_link()
 
-    print "============= Robot Groups:"
-    print robot.get_group_names()
+    # print "============= Robot Groups:"
+    # print robot.get_group_names()
 
 
     # For debugging reasons, it is useful to print the entire state of the robot.
-    print "============= Printing robot state"
-    print robot.get_current_state()
-    print "============= Robot state printing finished."
+    # print "============= Printing robot state"
+    # print robot.get_current_state()
+    # print "============= Robot state printing finished."
 
 
     # Planning to a pose goal
     print "============= Generating plan 1"
     pose_target = geometry_msgs.msg.Pose()
     pose_target.orientation.w = 1.0
-    pose_target.position.x = 0.5
+    pose_target.position.x = 0.8
     pose_target.position.y = 0.5
-    pose_target.position.z = 0.5
+    pose_target.position.z = 0.4
     group.set_pose_target(pose_target)
     print "============= Plan 1 has been generated!"
 
@@ -85,8 +85,22 @@ def atlas_move_python():
     # to compute the plan and visualize it if successful.
     # It is important to note that I just start planning, not asking the Atlas
     # to actually move its joint.
+    # print "============= This is the plan1 data structure ========="
     plan1 = group.plan()
+    # print plan1
+    # print "========== Plan1 data structure print comletion ========"
 
+    print "========= Test the plan1 data structure ======="
+    # print plan1.joint_trajectory.points[0]
+
+    for i in xrange(0, len(plan1.joint_trajectory.points)):
+        my_positions = [0] * 16
+        my_positions += [round(x, 4) for x in plan1.joint_trajectory.points[i].positions]
+        my_positions += [0] * 7
+        print my_positions
+
+
+    print "================ Test comletion ==============="
 
     print "============= Waiting while RVIZ displays plan1..."
     rospy.sleep(5)

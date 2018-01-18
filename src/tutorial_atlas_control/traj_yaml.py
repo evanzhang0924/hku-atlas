@@ -16,7 +16,10 @@ atlasJointNames = [
 # atlasJointNames = [
 #   'atlas::l_arm_shz', 'atlas::l_arm_shx', 'atlas::l_arm_ely', 'atlas::l_arm_elx', 'atlas::l_arm_wry', 'atlas::l_arm_wrx', 'atlas::l_arm_wry2']
 
-
+# traj_test = [[0.25, "0 0 0 0  0 0 0 0 0 0  0 0 0 0 0 0  0 0 0 0 0 0 0  0 0 0 0 0 0 0"],
+#              [0.25, "0 0 0 0  0 0 0 0 0 0  0 0 0 0 0 0  -0.167 0.33 0.833 0.667 0.7 -0.5 -0.767  0 0 0 0 0 0 0"],
+#              [0.25, "0 0 0 0  0 0 0 0 0 0  0 0 0 0 0 0  -0.335 0.67 1.667 1.333 1.4 -1.0 -1.533  0 0 0 0 0 0 0"],
+#              [0.25, "0 0 0 0  0 0 0 0 0 0  0 0 0 0 0 0  -0.5 1.0 2.5 2.0 2.1 -1.5 -2.3  0 0 0 0 0 0 0"]]
 
 currentJointState = JointState()
 def jointStatesCallback(msg):
@@ -26,7 +29,7 @@ def jointStatesCallback(msg):
 if __name__ == '__main__':
 
     # first make sure the input arguments are correct
-    if len(sys.argv) != 1:
+    if len(sys.argv) != 3:
         print "usage: traj_yaml.py YAML_FILE TRAJECTORY_NAME"
         sys.exit(1)
 
@@ -89,15 +92,16 @@ if __name__ == '__main__':
         y = traj_yaml[traj_name][i]
 
         # first value is time duration
-        dt = float(y[0])
+        # dt = float(y[0])
+        dt = 2.0 / float(traj_len)
 
         # subsequent values are desired joint positions
-        commandPosition = array([ float(x) for x in y[1].split() ])
+        # commandPosition = array([ float(x) for x in y[1].split() ])
+        commandPosition = array([ float(x) for x in y ])
 
         # desired publish interval
         dtPublish = 0.02
         n = ceil(dt / dtPublish)
-
         for ratio in linspace(0, 1, n):
             command.k_effort[16:23] = [255] * 7
             interpCommand = (1-ratio)*initialPosition + ratio * commandPosition

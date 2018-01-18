@@ -11,10 +11,17 @@ Created on Monday Jan 1st 09:55 2018
 # The Atlas Conrol over ROS with Python tutorial has solved this question.
 # By creating a topic for publish messages, this python file is used to do it.
 
+import sys
+import copy
+import rospy
+import moveit_commander
+import moveit_msgs.msg
+import geometry_msgs.msg
+
 import roslib; roslib.load_manifest('tutorial_atlas_control')
-import rospy, yaml, sys
 from atlas_msgs.msg import AtlasCommand
 from sensor_msgs.msg import JointState
+from std_msgs.msg import String
 from numpy import zeros, array, linspace
 from math import ceil
 
@@ -24,6 +31,93 @@ atlasJointNames = [
     'atlas::r_leg_hpz', 'atlas::r_leg_hpx', 'atlas::r_leg_hpy', 'atlas::r_leg_kny', 'atlas::r_leg_aky', 'atlas::r_leg_akx',
     'atlas::l_arm_shz', 'atlas::l_arm_shx', 'atlas::l_arm_ely', 'atlas::l_arm_elx', 'atlas::l_arm_wry', 'atlas::l_arm_wrx', 'atlas::l_arm_wry2',
     'atlas::r_arm_shz', 'atlas::r_arm_shx', 'atlas::r_arm_ely', 'atlas::r_arm_elx', 'atlas::r_arm_wry', 'atlas::r_arm_wrx', 'atlas::r_arm_wry2']
+
+def atlas_move_python():
+
+    # Print out the message setup notice
+    print "====================Starting setup process========================"
+
+    # Initialize the roscpp_initialize
+    moveit_commander.roscpp_initialize(sys.argv)
+    rospy.init_node('atlas_move_python', anonymous=True)
+
+
+    # Instantiate a RobotCommander object, which is an interface to
+    # the robot itself as a whole.
+    robot = moveit_commander.RobotCommander()
+
+
+    # Instantiate a PlanningSceneInterface object, which is an interface to
+    # the world file surrounding the Atlas robot.
+    scene = moveit_commander.PlanningSceneInterface()
+
+
+    # Instantiate a MoveGroupCommander object, which is an interface to one
+    # group of joints.
+    # Of course, I plan to use the left arm as the joint to catch the ball.
+    # This interface can be used to plan & execute motions on the left arm.
+    group = moveit_commander.MoveGroupCommander("left_arm")
+
+    # Create a DisplayTrajectory publisher which is used to publish trajectories
+    # for RVIZ to visualize.
+    display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path',
+                                                   moveit_msgs.msg.DisplayTrajectory,
+                                                   queue_size = 20)
+
+    # Launch the RVIZ and wait it initialize.
+    print "====================Launch the RVIZ========================"
+    rospy.sleep(10)
+    print "====================Launch completion========================"
+
+
+    # Getting basic Information.
+
+    print "============= Reference frame: %s" % group.get_planning_frame()
+
+    print "============= End effector: %s" % group.get_end_effector_link()
+
+    print "============= Robot Groups:"
+    print robot.get_group_names()
+
+
+    # For debugging reasons, it is useful to print the entire state of the robot.
+    print "============= Printing robot state"
+    print robot.get_current_state()
+    print "============= Robot state printing finished."
+
+
+    # Planning to a pose goal
+    print "============= Generating plan 1"
+    pose_target = geometry_msgs.msg.Pose()
+    pose_target.orientation.w = 1.0
+    pose_target.position.x = 0.5
+    pose_target.position.y = 0.5
+    pose_target.position.z = 0.5
+    group.set_pose_target(pose_target)
+    print "============= Plan 1 has been generated!"
+
+    # Until now, I have set the target pose, it is time to call the planner
+    # to compute the plan and visualize it if successful.
+    # It is important to note that I just start planning, not asking the Atlas
+    # to actually move its joint.
+    plan1 = group.plan()
+
+
+    print "============= Waiting while RVIZ displays plan1..."
+    rospy.sleep(5)
+
+    print "============ STOPPING"
+
+    time_duration = 3 / len(plan1.joint_trajectory.points)
+    trajectories = []
+
+
+
+
+
+
+
+
 
 
 trajectories = [[0.25, "0 0 0 0  0 0 0 0 0 0  0 0 0 0 0 0  0 0 0 0 0 0 0  0 0 0 0 0 0 0"],
@@ -38,6 +132,12 @@ def jointStatesCallback(msg):
     currentJointState = msg
 
 if __name__ == '__main__':
+
+    # Generate the trajectories
+    try:
+        atlas_move_python()
+    except rospy.ROSInterruptException:
+        pass
 
     # first make sure the input arguments are correct
     if len(sys.argv) != 1:
