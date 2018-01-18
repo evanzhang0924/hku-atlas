@@ -25,6 +25,13 @@ atlasJointNames = [
     'atlas::l_arm_shz', 'atlas::l_arm_shx', 'atlas::l_arm_ely', 'atlas::l_arm_elx', 'atlas::l_arm_wry', 'atlas::l_arm_wrx', 'atlas::l_arm_wry2',
     'atlas::r_arm_shz', 'atlas::r_arm_shx', 'atlas::r_arm_ely', 'atlas::r_arm_elx', 'atlas::r_arm_wry', 'atlas::r_arm_wrx', 'atlas::r_arm_wry2']
 
+
+trajectories = [[0.25, "0 0 0 0  0 0 0 0 0 0  0 0 0 0 0 0  0 0 0 0 0 0 0  0 0 0 0 0 0 0"],
+             [0.25, "0 0 0 0  0 0 0 0 0 0  0 0 0 0 0 0  -0.167 0.33 0.833 0.667 0.7 -0.5 -0.767  0 0 0 0 0 0 0"],
+             [0.25, "0 0 0 0  0 0 0 0 0 0  0 0 0 0 0 0  -0.335 0.67 1.667 1.333 1.4 -1.0 -1.533  0 0 0 0 0 0 0"],
+             [0.25, "0 0 0 0  0 0 0 0 0 0  0 0 0 0 0 0  -0.5 1.0 2.5 2.0 2.1 -1.5 -2.3  0 0 0 0 0 0 0"]]
+
+
 currentJointState = JointState()
 def jointStatesCallback(msg):
     global currentJointState
@@ -33,24 +40,31 @@ def jointStatesCallback(msg):
 if __name__ == '__main__':
 
     # first make sure the input arguments are correct
-    if len(sys.argv) != 3:
-        print "usage: traj_yaml.py YAML_FILE TRAJECTORY_NAME"
-        print "  where TRAJECTORY is a dictionary defined in YAML_FILE"
+    if len(sys.argv) != 1:
+        print "usage: python pub_joint_commands.py"
+        print "notice: other scripts are written inside pub_joint_commands.py"
         sys.exit(1)
-    traj_yaml = yaml.load(file(sys.argv[1], 'r'))
-    traj_name = sys.argv[2]
-    if not traj_name in traj_yaml:
-        print "unable to find trajectory %s in %s" % (traj_name, sys.argv[1])
-        sys.exit(1)
-    traj_len = len(traj_yaml[traj_name])
+
+    # traj_yaml = yaml.load(file(sys.argv[1], 'r'))
+    traj_test = trajectories
+
+    # traj_name = sys.argv[2]
+
+    # if not traj_name in traj_yaml:
+    #     print "unable to find trajectory %s in %s" % (traj_name, sys.argv[1])
+    #     sys.exit(1)
+
+    traj_len = len(traj_test)
 
     # Setup subscriber to atlas states
     rospy.Subscriber("/atlas/joint_states", JointState, jointStatesCallback)
 
     # initialize JointCommands message
     command = AtlasCommand()
+
     # command.name = list(atlasJointNames)
-    n = 30
+
+    n = len(atlasJointNames)
     command.position     = list(zeros(n))
     command.velocity     = list(zeros(n))
     command.effort       = list(zeros(n))
@@ -78,18 +92,18 @@ if __name__ == '__main__':
     #   command.i_effort_min[i] = -command.i_effort_max[i]
 
 
-
     # set up the publisher
     pub = rospy.Publisher('/atlas/atlas_command', AtlasCommand, queue_size=1)
 
     # for each trajectory
     for i in xrange(0, traj_len):
+
         # get initial joint positions
+        # initialPosition = initialPosition[16:23]
         initialPosition = array(currentJointState.position)
 
-        # initialPosition = initialPosition[16:23]
         # get joint commands from yaml
-        y = traj_yaml[traj_name][i]
+        y = traj_test[i]
 
         # first value is time duration
         dt = float(y[0])
@@ -100,10 +114,10 @@ if __name__ == '__main__':
         # desired publish interval
         dtPublish = 0.02
         n = ceil(dt / dtPublish)
-        
+
         for ratio in linspace(0, 1, n):
             command.k_effort[16:23] = [255] * 7
-            interpCommand = (1-ratio)*initialPosition + ratio * commandPosition
+            interpCommand = (1 - ratio) * initialPosition + ratio * commandPosition
             command.position = [ float(x) for x in interpCommand ]
             # print command
             pub.publish(command)
