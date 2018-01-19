@@ -41,7 +41,8 @@
 >As shown above, in Gazebo world, the ball has been catched by Atlas robot successfully.
 
 # 4. Reference
->[1] J. Kober, M. Glisson, and M. Mistry. Playing catch and juggling with a humanoid robot. In Proc. Int. Conf. on Humanoid Robots, 2012.  
+>[1] J. Kober, M. Glisson, and M. Mistry. Playing catch and juggling with a humanoid robot. In Proc. Int. Conf. on Humanoid Robots, 2012.
+
 >[2] E. J. Carter, M. N. Mistr, and G. Peter K. Carr. Playing Catch with Robots: Incorporating Social Gestures into Physical Interactions.
 
 >[3] M. Riley and C.G. Atkeson, “Robot Catching: Towards Engaging Human-Humanoid Interaction, ” Autonomous Robots, vol. 12, no. 1, pp. 119-128, Jan. 2002.
