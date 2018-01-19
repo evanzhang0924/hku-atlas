@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+
+
+
+
+
 import roslib; roslib.load_manifest('tutorial_atlas_control')
 import rospy, yaml, sys
 from atlas_msgs.msg import AtlasCommand

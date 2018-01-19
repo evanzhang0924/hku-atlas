@@ -26,16 +26,13 @@ def atlas_move_python():
     moveit_commander.roscpp_initialize(sys.argv)
     rospy.init_node('atlas_move_python', anonymous=True)
 
-
     # Instantiate a RobotCommander object, which is an interface to
     # the robot itself as a whole.
     robot = moveit_commander.RobotCommander()
 
-
     # Instantiate a PlanningSceneInterface object, which is an interface to
     # the world file surrounding the Atlas robot.
     scene = moveit_commander.PlanningSceneInterface()
-
 
     # Instantiate a MoveGroupCommander object, which is an interface to one
     # group of joints.
