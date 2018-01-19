@@ -41,15 +41,23 @@
 >As shown above, in Gazebo world, the ball has been catched by Atlas robot successfully.
 
 # 4. Reference
->[1] J. Kober, M. Glisson, and M. Mistry. Playing catch and juggling with a humanoid robot. In Proc. Int. Conf. on Humanoid Robots, 2012  
+>[1] J. Kober, M. Glisson, and M. Mistry. Playing catch and juggling with a humanoid robot. In Proc. Int. Conf. on Humanoid Robots, 2012.  
 >[2] E. J. Carter, M. N. Mistr, and G. Peter K. Carr. Playing Catch with Robots: Incorporating Social Gestures into Physical Interactions.
+
 >[3] M. Riley and C.G. Atkeson, “Robot Catching: Towards Engaging Human-Humanoid Interaction, ” Autonomous Robots, vol. 12, no. 1, pp. 119-128, Jan. 2002.
+
 >[4] K. Deguchi, H. Sakurai, and S. Ushida, “A goal oriented just-in-time visual servoing for ball catching robot arm, ” in Proc. Int. Conf. on Intelligent Robots and Systems, 2008.
+
 >[5] R. Mori and F. Miyazaki, “Examination of human ball catching strategy though autonomous mobile robot, ” in IEEE International Conference on Robotics and Automation, pp. 4236-4241, 2002.
+
 >[6] V. Lippiello and F. Ruggiero, “Monocular eye-in-hand robotic ball catching with parabolic motion estimation, ” in 10th International IFAC Symposium on Robot Control, pp. 229-234, 2012.
+
 >[7] S. Chapman, “Catching a Baseball”, American Journal of Physics, vol.36, pp. 868-870, 1968.
+
 >[8] B. Bauml, T. Wimbock, and G. Hirzinger, “Kinematically optimal catching a flying ball with a hand-arm-system, ” in Proc. Int. Conf. on Intelligent Robots and Systems, 2010.
+
 >[9] V. Lippiello, F. Ruggiero, B. Siciliano, and L. Villani, “Visual grasp planning for unknown objects using a multifingered robotic hand, ” IEEE/ASME Transactions on Mechatronics, vol. pp. 1050-1059, 2013.
+
 >[10] S. Kim, A. Shukla, and A. Billard, “Catching objects in flight, ” IEEE Transactions on Robotics, 2014.
 
 # 5. Contact information
