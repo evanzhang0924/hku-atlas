@@ -10,7 +10,7 @@
 >In conclusion, in order to increase levels of both realism and human engagement, I want to be able to establish a physical connection between humanoid biped robot and normal participants. Throwing and catching objects from visitors to robots is one way of making such interaction, and of course it will maintain a safe distance. With this objective in mind, I want to come up with that dissertation for human-robot physical interaction by ways of throwing and catching balls between a human and humanoid robot in the real world.
 
 # 2. Analysis of the problem
->in conclusion, the ball catching problem has been divided into three pieces:
+>In conclusion, the ball catching problem has been divided into three pieces:
 >1. The Atlas has to identity the flying ball in the air which is ball detection.
 >2. After capturing the ball, a estimation of ball trajectory has been proposed.
 >3. Finally, the Atlas moves its left arm to the corresponding position and catch the ball.
