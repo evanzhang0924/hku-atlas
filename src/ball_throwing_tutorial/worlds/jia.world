@@ -193,7 +193,7 @@
               <far>100</far>
             </clip>
           </camera>
-          <plugin name='extra_camera_controller' filename='libgazebo_ros_multicamera.so'>
+          <plugin name='extra_camera_controller' filename='libgazebo_ros_camera.so'>
             <alwaysOn>true</alwaysOn>
             <updateRate>0.0</updateRate>
             <cameraName>extra_camera/camera</cameraName>
