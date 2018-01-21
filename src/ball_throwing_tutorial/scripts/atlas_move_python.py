@@ -72,9 +72,9 @@ def atlas_move_python():
     print "============= Generating plan 1"
     pose_target = geometry_msgs.msg.Pose()
     pose_target.orientation.w = 1.0
-    pose_target.position.x = 0.8
+    pose_target.position.x = 0.3
     pose_target.position.y = 0.5
-    pose_target.position.z = 0.4
+    pose_target.position.z = 1.0
     group.set_pose_target(pose_target)
     print "============= Plan 1 has been generated!"
 
