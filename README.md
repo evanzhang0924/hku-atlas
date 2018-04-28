@@ -46,14 +46,6 @@
 
 ###### (4). Experiment Result
 
-![Alt text](https://github.com/evanzhang0924/hku-atlas/raw/master/docs/webcamera.png)
-
->This is a normal web camera Logitech C525, and initially I always test my algorithm in this hardware camera.
-
-![Alt text](https://github.com/evanzhang0924/hku-atlas/raw/master/docs/industrialcamera.jpg)
-
->This is the higher level industrial camera GIGE, and at last time I test my algorithm in this camera and the outcome goes well too.
-
 ![Alt text](https://github.com/evanzhang0924/hku-atlas/raw/master/docs/ballCatch.png)
 
 >As shown above, in Gazebo world, the ball has been catched by Atlas robot successfully.
